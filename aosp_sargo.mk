@@ -60,8 +60,21 @@ ifneq (REL,$(PLATFORM_VERSION_CODENAME))
   PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 endif
 
+include device/google/bonito/device-proton.mk
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2220
+TARGET_SCREEN_WIDTH := 1080
+
+# Device identifier. This must come after all inclusions
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
 PRODUCT_NAME := aosp_sargo
 PRODUCT_DEVICE := sargo
-PRODUCT_MODEL := AOSP on sargo
+PRODUCT_MODEL := Pixel 3a
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=sargo \
+    PRIVATE_BUILD_DESC="sargo-user 12 SP2A.220505.006 8561491 release-keys"
+
+BUILD_FINGERPRINT := google/sargo/sargo:12/SP2A.220505.006/8561491:user/release-keys
