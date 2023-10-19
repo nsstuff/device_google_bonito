@@ -62,6 +62,9 @@ endif
 
 include device/google/bonito/device-proton.mk
 
+# Inherit some common DerpFest stuff.
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2220
 TARGET_SCREEN_WIDTH := 1080
@@ -69,7 +72,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Device identifier. This must come after all inclusions
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := google
-PRODUCT_NAME := aosp_sargo
+PRODUCT_NAME := derp_sargo
 PRODUCT_DEVICE := sargo
 PRODUCT_MODEL := Pixel 3a
 
